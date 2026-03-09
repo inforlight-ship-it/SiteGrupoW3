@@ -21,6 +21,7 @@ Este é o guia completo para navegar por toda a documentação do projeto.
 | [QUICKSTART.md](./QUICKSTART.md) | Início rápido com 3 comandos | 2-5 min |
 | [README.md](./README.md) | Visão geral e features | 10 min |
 | [SETUP.md](./SETUP.md) | Setup completo e detalhado | 15 min |
+| [LOGO_SETUP.md](./LOGO_SETUP.md) | Instruções para configurar o logo | 5 min |
 
 ### 🔧 Desenvolvimento
 | Documento | Descrição | Para quem? |

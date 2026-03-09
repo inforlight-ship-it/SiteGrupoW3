@@ -1,0 +1,196 @@
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║           🎯 COMO ADICIONAR O LOGO - GUIA RÁPIDO            ║
+║                                                              ║
+║              Grupo W3 Cibersegurança - Website              ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+
+⚠️  ATENÇÃO: O LOGO PRECISA SER ADICIONADO MANUALMENTE!
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  📋 PASSO A PASSO (2 minutos)                               │
+└─────────────────────────────────────────────────────────────┘
+
+1️⃣  BAIXAR O ARQUIVO
+    └─ Acesse o repositório GitHub da empresa
+    └─ Localize o arquivo "Ícone.jpg"
+    └─ Baixe para seu computador
+
+2️⃣  RENOMEAR
+    └─ Nome original: Ícone.jpg
+    └─ Nome correto: icone.jpg
+    └─ (tudo minúsculo, sem acento)
+
+3️⃣  MOVER PARA A PASTA
+    └─ Copie o arquivo
+    └─ Cole em: /public/
+    └─ Caminho final: /public/icone.jpg
+
+4️⃣  DELETAR LEMBRETES
+    └─ Delete: /public/ADICIONAR_LOGO_AQUI.txt
+    └─ (Opcional) Delete este arquivo também
+
+5️⃣  TESTAR
+    └─ Rode: npm run dev
+    └─ Abra: http://localhost:5173
+    └─ Verifique se logo aparece no topo
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  ✅ VERIFICAÇÃO                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Para confirmar que está tudo OK:
+
+□  O arquivo icone.jpg está em /public/?
+□  O nome está correto (minúsculas)?
+□  O servidor está rodando (npm run dev)?
+□  O logo aparece no navbar (topo)?
+□  O logo aparece no footer (rodapé)?
+
+Se todos ✓ = Sucesso! 🎉
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  🆘 PROBLEMAS?                                              │
+└─────────────────────────────────────────────────────────────┘
+
+Logo não aparece?
+  → Reinicie o servidor (Ctrl+C, depois npm run dev)
+  → Limpe cache do navegador (Ctrl+Shift+R)
+  → Verifique se está em /public/ (não /src/)
+
+Erro 404?
+  → Confirme que o nome é icone.jpg (minúsculas)
+  → Verifique se o arquivo realmente existe
+
+Precisa de ajuda detalhada?
+  → Leia: LOGO_SETUP.md
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  📚 DOCUMENTAÇÃO COMPLETA                                   │
+└─────────────────────────────────────────────────────────────┘
+
+LOGO_SETUP.md           → Guia completo (10 min)
+VERIFICACAO_LOGO.md     → Checklist rápido (1 min)
+LOGO_MIGRATION.md       → Histórico técnico (5 min)
+ATUALIZACAO_LOGO_RESUMO.md → Resumo executivo (2 min)
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  🎯 RESUMO ULTRA-RÁPIDO                                     │
+└─────────────────────────────────────────────────────────────┘
+
+1. Baixe "Ícone.jpg" do GitHub
+2. Renomeie para "icone.jpg"
+3. Coloque em /public/icone.jpg
+4. Rode npm run dev
+5. Pronto!
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  ⚡ COMANDOS ÚTEIS                                          │
+└─────────────────────────────────────────────────────────────┘
+
+Verificar se arquivo existe:
+  → ls -la public/icone.jpg
+
+Iniciar servidor:
+  → npm run dev
+
+Testar build:
+  → npm run build
+
+Verificar logo no build:
+  → ls -la dist/icone.jpg
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  📍 LOCALIZAÇÃO DOS ARQUIVOS                                │
+└─────────────────────────────────────────────────────────────┘
+
+Logo deve ficar em:
+  ✅ /public/icone.jpg
+
+NÃO coloque em:
+  ❌ /src/icone.jpg
+  ❌ /src/assets/icone.jpg
+  ❌ /icone.jpg (raiz)
+
+Componente que usa:
+  → /src/app/components/Logo.tsx
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  🔍 ONDE O LOGO APARECE                                     │
+└─────────────────────────────────────────────────────────────┘
+
+1. Navbar (topo de todas as páginas)
+2. Footer (rodapé de todas as páginas)
+3. Hero (página inicial)
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  ⏱️  TEMPO ESTIMADO                                         │
+└─────────────────────────────────────────────────────────────┘
+
+Download do GitHub:      30 seg
+Renomear e mover:       10 seg
+Testar:                 30 seg
+─────────────────────────────────
+TOTAL:                  ~2 min
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  🎨 ESPECIFICAÇÕES DO LOGO                                  │
+└─────────────────────────────────────────────────────────────┘
+
+Formato:     JPG (ou PNG/SVG)
+Tamanho:     Recomendado < 500KB
+Dimensões:   Qualquer (redimensiona automaticamente)
+Proporção:   Mantida automaticamente
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  🚀 PRONTO PARA DEPLOY?                                     │
+└─────────────────────────────────────────────────────────────┘
+
+Antes de fazer deploy, confirme:
+  ✅ Logo adicionado em /public/icone.jpg
+  ✅ Testado localmente
+  ✅ Build funciona (npm run build)
+  ✅ Logo commitado no Git
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  📞 INFORMAÇÕES DA EMPRESA                                  │
+└─────────────────────────────────────────────────────────────┘
+
+Empresa:     Grupo W3 Cibersegurança
+Localização: Sorocaba/SP
+Telefone:    +55 15 98818-9999
+Email:       contato@grupow3.com
+Website:     grupow3.com
+Instagram:   @grupow3
+
+
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║  💡 DICA: Este é um guia rápido. Para mais detalhes,        ║
+║      consulte LOGO_SETUP.md                                 ║
+║                                                              ║
+║  🎯 PRIORIDADE: ALTA - Necessário antes do deploy!          ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+
+Última atualização: Março 2026
+Versão: 1.0.0
+Status: Aguardando adição do logo
+
+─────────────────────────────────────────────────────────────────
+

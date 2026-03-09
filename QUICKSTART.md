@@ -8,14 +8,19 @@ Comece a trabalhar no projeto em menos de 5 minutos!
 # 1. Instalar dependências
 npm install
 
-# 2. Iniciar servidor de desenvolvimento
+# 2. Adicionar o logo (IMPORTANTE!)
+# Coloque o arquivo Ícone.jpg do GitHub em /public/icone.jpg
+
+# 3. Iniciar servidor de desenvolvimento
 npm run dev
 
-# 3. Abrir no navegador
+# 4. Abrir no navegador
 # http://localhost:5173
 ```
 
 Pronto! O site está rodando. 🎉
+
+> 💡 **Nota**: Se o logo não aparecer, verifique [LOGO_SETUP.md](./LOGO_SETUP.md) para instruções detalhadas.
 
 ## 📦 Comandos Disponíveis
 

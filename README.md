@@ -27,7 +27,11 @@ git clone <seu-repositorio>
 cd grupo-w3-website
 ```
 
-2. Instale as dependências:
+2. **Adicione o logo da empresa:**
+   - Coloque o arquivo `Ícone.jpg` do repositório GitHub na pasta `/public/` como `icone.jpg`
+   - O logo será acessível via `http://localhost:5173/icone.jpg` durante o desenvolvimento
+
+3. Instale as dependências:
 ```bash
 npm install
 ```

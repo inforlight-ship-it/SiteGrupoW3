@@ -64,6 +64,16 @@ Este documento confirma que todas as alterações necessárias foram realizadas 
 - [x] DEPLOYMENT.md com opções de deploy
 - [x] CHECKLIST.md (este arquivo)
 - [x] .gitignore criado
+- [x] LOGO_SETUP.md criado
+- [x] LOGO_MIGRATION.md criado
+- [x] VERIFICACAO_LOGO.md criado
+
+### 11. Assets e Logo ⚠️
+- [x] Componente Logo.tsx atualizado para usar /public/icone.jpg
+- [x] Documentação completa sobre logo criada
+- [x] /public/README.md com instruções
+- [x] Arquivo placeholder ADICIONAR_LOGO_AQUI.txt criado
+- [ ] **PENDENTE**: Adicionar arquivo icone.jpg do GitHub em /public/
 
 ## 🧪 Testes para Realizar
 

@@ -1,0 +1,42 @@
+⚠️  ATENÇÃO: LOGO FALTANDO! ⚠️
+
+O arquivo do logo da empresa precisa ser adicionado nesta pasta.
+
+📋 INSTRUÇÕES:
+
+1. Baixe o arquivo "Ícone.jpg" do repositório GitHub da empresa
+2. Renomeie para "icone.jpg" (tudo em minúsculas, sem acentos)
+3. Coloque nesta pasta: /public/icone.jpg
+4. DELETE este arquivo (ADICIONAR_LOGO_AQUI.txt)
+5. Reinicie o servidor de desenvolvimento
+
+✅ CHECKLIST:
+
+[ ] Arquivo baixado do GitHub
+[ ] Renomeado para "icone.jpg"
+[ ] Colocado em /public/icone.jpg
+[ ] Servidor reiniciado
+[ ] Logo aparece no site
+[ ] Este arquivo deletado
+
+🔗 ACESSO:
+
+Depois de adicionar, o logo estará em:
+- Desenvolvimento: http://localhost:5173/icone.jpg
+- Produção: https://seu-dominio.com/icone.jpg
+
+📚 DOCUMENTAÇÃO:
+
+Para instruções detalhadas, veja:
+- /LOGO_SETUP.md
+- /LOGO_MIGRATION.md
+- /public/README.md
+
+⚡ URGENTE:
+
+SEM O LOGO, O SITE NÃO FUNCIONARÁ CORRETAMENTE!
+Adicione o arquivo antes de fazer o primeiro deploy.
+
+---
+
+Dúvidas? Veja: /LOGO_SETUP.md
