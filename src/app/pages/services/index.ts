@@ -1,0 +1,12 @@
+export { CIOServicePage } from "./CIOServicePage";
+export { DPOServicePage } from "./DPOServicePage";
+export { DatacenterPage } from "./DatacenterPage";
+export { BackupServicePage } from "./BackupServicePage";
+export { RMMPage } from "./RMMPage";
+export { EDRPage } from "./EDRPage";
+export { FirewallPage } from "./FirewallPage";
+export { NOCPage } from "./NOCPage";
+export { SOCPage } from "./SOCPage";
+export { AccessControlPage } from "./AccessControlPage";
+export { CCTVPage } from "./CCTVPage";
+export { EmailProtectionPage } from "./EmailProtectionPage";
