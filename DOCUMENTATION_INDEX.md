@@ -21,7 +21,17 @@ Este é o guia completo para navegar por toda a documentação do projeto.
 | [QUICKSTART.md](./QUICKSTART.md) | Início rápido com 3 comandos | 2-5 min |
 | [README.md](./README.md) | Visão geral e features | 10 min |
 | [SETUP.md](./SETUP.md) | Setup completo e detalhado | 15 min |
-| [LOGO_SETUP.md](./LOGO_SETUP.md) | Instruções para configurar o logo | 5 min |
+
+### 🎨 Logo e Branding
+| Documento | Descrição | Tempo |
+|-----------|-----------|-------|
+| [RESUMO_EXECUTIVO_LOGO.md](./RESUMO_EXECUTIVO_LOGO.md) | Resumo executivo da configuração | 2 min |
+| [LOGO_SETUP.md](./LOGO_SETUP.md) | Guia completo do logo | 5 min |
+| [VERIFICACAO_LOGO_FINAL.md](./VERIFICACAO_LOGO_FINAL.md) | Checklist e testes do logo | 10 min |
+| [ATUALIZACAO_LOGO_FINAL.md](./ATUALIZACAO_LOGO_FINAL.md) | Detalhes técnicos da atualização | 5 min |
+| [CHANGELOG_LOGO.md](./CHANGELOG_LOGO.md) | Histórico de mudanças do logo | 5 min |
+| [LOGO_STATUS.txt](./LOGO_STATUS.txt) | Status atual (texto plano) | 1 min |
+| [COMO_ADICIONAR_LOGO.txt](./COMO_ADICIONAR_LOGO.txt) | Instruções rápidas (texto plano) | 2 min |
 
 ### 🔧 Desenvolvimento
 | Documento | Descrição | Para quem? |

@@ -2,73 +2,90 @@
 
 Esta pasta contém arquivos estáticos que são servidos diretamente pelo servidor web.
 
-## 📁 Conteúdo
+## 📁 Conteúdo Atual
 
-### ✅ Arquivos Atuais
+### ✅ Configuração do Logo
 
-- `favicon.svg` - Ícone que aparece na aba do navegador
+**STATUS**: ✅ O logo está configurado e funcionando!
 
-### ⚠️ Arquivos Necessários
+O logo é carregado **diretamente do site oficial** da empresa:
+- **URL**: `https://grupow3.com/assets/icone.jpg`
+- **Componente**: `/src/app/components/Logo.tsx`
+- **Favicon**: Configurado no `index.html`
 
-- **`icone.jpg`** - Logo da empresa Grupo W3 (FALTANDO!)
+**Não é necessário adicionar arquivos nesta pasta** - o logo está hospedado no servidor oficial.
 
-## 🔧 Como Adicionar o Logo
+### Arquivos Presentes
 
-### Passo a Passo
+- `favicon.svg` - Ícone legado (substituído pelo ícone oficial)
+- `ADICIONAR_LOGO_AQUI.txt` - Instruções antigas (mantido para referência)
 
-1. **Localize o arquivo original**
-   - O arquivo `Ícone.jpg` está no repositório GitHub da empresa
-   - Faça download do arquivo
+## 🔧 Como Funciona
 
-2. **Renomeie o arquivo**
-   - Nome original: `Ícone.jpg`
-   - Nome correto: `icone.jpg` (tudo em minúsculas)
+O componente Logo carrega a imagem diretamente da URL oficial:
 
-3. **Coloque nesta pasta**
+```tsx
+// /src/app/components/Logo.tsx
+export function Logo({ className = "" }: { className?: string }) {
+  return (
+    <img 
+      src="https://grupow3.com/assets/icone.jpg" 
+      alt="Grupo W3 Cibersegurança" 
+      className={className}
+      style={{ height: '60px', width: 'auto' }}
+    />
+  );
+}
+```
+
+## ⚙️ Alternativa: Hospedar Localmente
+
+Se preferir hospedar o logo localmente nesta pasta:
+
+1. **Baixe o arquivo**
+   ```
+   URL: https://grupow3.com/assets/icone.jpg
+   ```
+
+2. **Salve nesta pasta**
    ```
    /public/icone.jpg
    ```
 
-4. **Verifique a instalação**
-   - Durante desenvolvimento: acesse `http://localhost:5173/icone.jpg`
-   - O arquivo deve ser exibido no navegador
-   - Reinicie o servidor se necessário
+3. **Atualize o componente Logo.tsx**
+   ```tsx
+   src="https://grupow3.com/assets/icone.jpg"  // Atual
+   src="/icone.jpg"  // Para uso local
+   ```
 
-### Formato e Especificações
-
-- **Formato**: JPG (recomendado) ou PNG
-- **Dimensões**: Qualquer (será redimensionado automaticamente)
-- **Tamanho**: Recomendado < 500KB
-- **Transparência**: Suportada (se usar PNG)
-
-### Onde o Logo é Usado
-
-O logo é usado pelos seguintes componentes:
-
-1. **Navbar** - Header do site (desktop e mobile)
-2. **Footer** - Rodapé do site
-3. **Outras páginas** - Conforme necessário
-
-O componente responsável é:
-```
-/src/app/components/Logo.tsx
-```
+4. **Atualize o index.html**
+   ```html
+   href="https://grupow3.com/assets/icone.jpg"  // Atual
+   href="/icone.jpg"  // Para uso local
+   ```
 
 ## 🌐 URLs de Acesso
 
-### Desenvolvimento
+### Logo Oficial (Atual)
+```
+https://grupow3.com/assets/icone.jpg
+```
+
+### Se hospedar localmente
+
+**Desenvolvimento**:
 ```
 http://localhost:5173/icone.jpg
 ```
 
-### Produção
+**Produção**:
 ```
 https://seu-dominio.com/icone.jpg
 ```
 
-## 📝 Outros Assets
+## 📝 Outros Assets Estáticos
 
-Você pode adicionar outros arquivos estáticos nesta pasta:
+Você pode adicionar outros arquivos nesta pasta conforme necessário:
 
 ### Imagens
 ```
@@ -83,13 +100,13 @@ Você pode adicionar outros arquivos estáticos nesta pasta:
 /public/android-chrome-192x192.png
 ```
 
-### Arquivos
+### Documentos
 ```
 /public/politica-privacidade.pdf
 /public/termos-uso.pdf
 ```
 
-### Robots e Manifests
+### Configurações
 ```
 /public/robots.txt
 /public/manifest.json
@@ -100,7 +117,7 @@ Você pode adicionar outros arquivos estáticos nesta pasta:
 ### Durante Desenvolvimento
 - Servidos diretamente de `/public/`
 - Acessíveis via `http://localhost:5173/nome-arquivo.ext`
-- Hot reload não se aplica (requer refresh)
+- Hot reload não se aplica (requer refresh manual)
 
 ### Durante Build
 - Copiados para `/dist/` sem processamento
@@ -109,7 +126,7 @@ Você pode adicionar outros arquivos estáticos nesta pasta:
 
 ## 🔗 Referenciando no Código
 
-### HTML (index.html)
+### HTML
 ```html
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -117,7 +134,7 @@ Você pode adicionar outros arquivos estáticos nesta pasta:
 
 ### React/JSX
 ```tsx
-<img src="/icone.jpg" alt="Logo" />
+<img src="/arquivo.jpg" alt="Descrição" />
 ```
 
 ### CSS
@@ -125,62 +142,39 @@ Você pode adicionar outros arquivos estáticos nesta pasta:
 background-image: url('/hero-background.jpg');
 ```
 
-## ✅ Checklist
+## ✅ Vantagens da Configuração Atual
 
-Antes de fazer deploy, verifique:
-
-- [ ] `icone.jpg` está presente em `/public/`
-- [ ] Arquivo é acessível via `http://localhost:5173/icone.jpg`
-- [ ] Logo aparece corretamente no site
-- [ ] Build de produção testado (`npm run build`)
-- [ ] Arquivo está no `.gitignore` como exceção (permitido)
+- ✅ Logo sempre atualizado com a versão oficial
+- ✅ Não precisa gerenciar arquivo local
+- ✅ Menor tamanho do repositório
+- ✅ Carregamento direto do CDN da empresa
+- ✅ Funciona em desenvolvimento e produção
 
 ## 🆘 Troubleshooting
 
 ### Logo não aparece
 
-1. **Verifique se o arquivo existe**
-   ```bash
-   ls -la public/icone.jpg
+1. **Verifique a conexão com internet**
+2. **Confirme que a URL está acessível**
    ```
-
-2. **Verifique as permissões**
-   ```bash
-   chmod 644 public/icone.jpg
+   https://grupow3.com/assets/icone.jpg
    ```
-
-3. **Reinicie o servidor**
-   ```bash
-   # Pare o servidor (Ctrl+C)
-   npm run dev
-   ```
-
-4. **Limpe o cache do navegador**
+3. **Limpe o cache do navegador**
    - Chrome: Ctrl + Shift + R
    - Firefox: Ctrl + Shift + R
    - Safari: Cmd + Option + R
 
-### Erro 404
+### Problemas de CORS
 
-- Certifique-se de que está usando `/icone.jpg` (com barra no início)
-- Não use `./icone.jpg` ou `../icone.jpg`
-- O caminho deve ser absoluto a partir de `/public/`
-
-### Imagem distorcida
-
-Verifique o componente `/src/app/components/Logo.tsx`:
-```tsx
-style={{ height: '60px', width: 'auto' }}
-```
-
-Ajuste conforme necessário.
+Se houver problemas de Cross-Origin Resource Sharing:
+- Use a alternativa de hospedar localmente (veja seção acima)
 
 ## 📚 Documentação Relacionada
 
 - [LOGO_SETUP.md](../LOGO_SETUP.md) - Instruções detalhadas sobre o logo
+- [COMO_ADICIONAR_LOGO.txt](../COMO_ADICIONAR_LOGO.txt) - Guia rápido
 - [README.md](../README.md) - Visão geral do projeto
-- [SETUP.md](../SETUP.md) - Configuração do ambiente
 
 ---
 
-**Importante**: O arquivo `icone.jpg` é essencial para o funcionamento correto do site. Não esqueça de adicioná-lo antes do primeiro deploy!
+**Status**: ✅ Logo configurado e funcionando diretamente do site oficial!
