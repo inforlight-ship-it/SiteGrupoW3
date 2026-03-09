@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowLeft, CheckCircle, LucideIcon, Home, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 interface ServiceDetailPageProps {
   icon: LucideIcon;
@@ -103,7 +102,7 @@ export function ServiceDetailPage({
           className="mb-16 rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/10 group"
         >
           <div className="relative overflow-hidden">
-            <ImageWithFallback
+            <img
               src={imageUrl}
               alt={title}
               className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"

@@ -1,6 +1,6 @@
 import { Mail, Phone, Instagram } from "lucide-react";
 import { motion } from "motion/react";
-import logo from "figma:asset/96893c2262096798f2da3e9878a6f5823b57294c.png";
+import { Logo } from "./Logo";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,7 +18,7 @@ export function Footer() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Grupo W3" className="h-10 w-auto" />
+              <Logo className="h-10 w-auto" />
             </div>
             <p className="text-blue-100/70 mb-4 max-w-md">
               Protegendo empresas com soluções avançadas de cibersegurança e consultoria em TI. 

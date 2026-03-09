@@ -1,0 +1,57 @@
+export function Logo({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      width="200"
+      height="60"
+      viewBox="0 0 200 60"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: "#06b6d4", stopOpacity: 1 }} />
+          <stop offset="100%" style={{ stopColor: "#3b82f6", stopOpacity: 1 }} />
+        </linearGradient>
+      </defs>
+      
+      {/* Shield icon with W3 */}
+      <path
+        d="M20 10 L30 5 L40 10 L40 25 C40 32 35 38 30 40 C25 38 20 32 20 25 Z"
+        fill="url(#logoGradient)"
+      />
+      <text
+        x="30"
+        y="28"
+        fontFamily="Arial, sans-serif"
+        fontSize="14"
+        fontWeight="bold"
+        fill="white"
+        textAnchor="middle"
+      >
+        W3
+      </text>
+      
+      {/* Company name */}
+      <text
+        x="50"
+        y="25"
+        fontFamily="Arial, sans-serif"
+        fontSize="20"
+        fontWeight="bold"
+        fill="url(#logoGradient)"
+      >
+        GRUPO W3
+      </text>
+      <text
+        x="50"
+        y="40"
+        fontFamily="Arial, sans-serif"
+        fontSize="10"
+        fill="#94a3b8"
+      >
+        Cibersegurança
+      </text>
+    </svg>
+  );
+}

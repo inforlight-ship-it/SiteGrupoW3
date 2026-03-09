@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
-import logo from "figma:asset/96893c2262096798f2da3e9878a6f5823b57294c.png";
+import { Logo } from "./Logo";
 
 export function Hero() {
   return (
@@ -65,7 +65,7 @@ export function Hero() {
                   ease: "easeInOut",
                 }}
               />
-              <img src={logo} alt="Grupo W3" className="h-32 w-auto relative z-10" />
+              <Logo className="h-32 w-auto relative z-10" />
             </div>
           </motion.div>
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import logo from "figma:asset/96893c2262096798f2da3e9878a6f5823b57294c.png";
+import { Logo } from "./Logo";
 import { Link, useLocation } from "react-router-dom";
 
 export function Navbar() {
@@ -55,11 +55,7 @@ export function Navbar() {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full group-hover:bg-blue-500/30 transition-all" />
-              <img
-                src={logo}
-                alt="Grupo W3 Logo"
-                className="h-12 w-auto relative z-10 transition-transform group-hover:scale-105"
-              />
+              <Logo className="h-12 w-auto relative z-10 transition-transform group-hover:scale-105" />
             </div>
           </Link>
 
