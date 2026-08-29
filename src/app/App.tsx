@@ -12,6 +12,8 @@ const SecurityPostureCheckPage = lazy(() => import("./pages/SecurityPostureCheck
 const PrivacyPage = lazy(() => import("./pages/LegalPages").then((module) => ({ default: module.PrivacyPage })));
 const CookiesPage = lazy(() => import("./pages/LegalPages").then((module) => ({ default: module.CookiesPage })));
 const TermsPage = lazy(() => import("./pages/LegalPages").then((module) => ({ default: module.TermsPage })));
+const ContentCenterPage = lazy(() => import("./pages/ContentPages").then((module) => ({ default: module.ContentCenterPage })));
+const ArticlePage = lazy(() => import("./pages/ContentPages").then((module) => ({ default: module.ArticlePage })));
 
 const FazendaBoaVistaCasePage = lazy(() => import("./pages/cases/CaseDetailPage").then((module) => ({ default: module.FazendaBoaVistaCasePage })));
 const AdimaxCasePage = lazy(() => import("./pages/cases/CaseDetailPage").then((module) => ({ default: module.AdimaxCasePage })));
@@ -54,6 +56,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/diagnostico-seguranca" element={<SecurityPostureCheckPage />} />
+            <Route path="/conteudos" element={<ContentCenterPage />} />
+            <Route path="/conteudos/:slug" element={<ArticlePage />} />
             <Route path="/privacidade" element={<PrivacyPage />} />
             <Route path="/cookies" element={<CookiesPage />} />
             <Route path="/termos-de-uso" element={<TermsPage />} />
