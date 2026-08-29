@@ -30,3 +30,10 @@ jobs:
 
       - name: Production build
         run: npm run build
+
+      - name: Upload production build
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-redesign-dist
+          path: dist
+          if-no-files-found: error
