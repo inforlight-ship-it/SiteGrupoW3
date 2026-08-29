@@ -14,6 +14,7 @@ const CookiesPage = lazy(() => import("./pages/LegalPages").then((module) => ({ 
 const TermsPage = lazy(() => import("./pages/LegalPages").then((module) => ({ default: module.TermsPage })));
 const ContentCenterPage = lazy(() => import("./pages/ContentPages").then((module) => ({ default: module.ContentCenterPage })));
 const ArticlePage = lazy(() => import("./pages/ContentPages").then((module) => ({ default: module.ArticlePage })));
+const LocalCybersecurityPage = lazy(() => import("./pages/LocalCybersecurityPage").then((module) => ({ default: module.LocalCybersecurityPage })));
 
 const FazendaBoaVistaCasePage = lazy(() => import("./pages/cases/CaseDetailPage").then((module) => ({ default: module.FazendaBoaVistaCasePage })));
 const AdimaxCasePage = lazy(() => import("./pages/cases/CaseDetailPage").then((module) => ({ default: module.AdimaxCasePage })));
@@ -58,6 +59,7 @@ export default function App() {
             <Route path="/diagnostico-seguranca" element={<SecurityPostureCheckPage />} />
             <Route path="/conteudos" element={<ContentCenterPage />} />
             <Route path="/conteudos/:slug" element={<ArticlePage />} />
+            <Route path="/ciberseguranca-sorocaba" element={<LocalCybersecurityPage />} />
             <Route path="/privacidade" element={<PrivacyPage />} />
             <Route path="/cookies" element={<CookiesPage />} />
             <Route path="/termos-de-uso" element={<TermsPage />} />
