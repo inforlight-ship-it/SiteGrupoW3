@@ -27,11 +27,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Security audit
+        run: npm audit --audit-level=high
+
       - name: TypeScript check
         run: npx tsc --noEmit
 
       - name: Production build
         run: npm run build
+
+      - name: Performance budget
+        run: node scripts/check-build-size.mjs
 
       - name: Upload production build
         uses: actions/upload-artifact@v4
