@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { Analytics } from "./components/Analytics";
 import { HomePage } from "./pages/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import {
@@ -38,6 +39,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
+      <Analytics />
       <div className="min-h-screen bg-slate-950">
         <Navbar />
         <Routes>
