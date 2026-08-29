@@ -1,4 +1,4 @@
-import { SEO, organizationSchema } from "../components/SEO";
+import { SEO } from "../components/SEO";
 import { Hero } from "../components/Hero";
 import { SocialProof } from "../components/SocialProof";
 import { CaseStudies } from "../components/CaseStudies";
@@ -19,7 +19,6 @@ export function HomePage() {
         title="Grupo W3 | Cibersegurança, SOC, NOC e Infraestrutura de TI"
         description="Cibersegurança, SOC e NOC 24×7, infraestrutura, backup, endpoints, redes e consultoria para empresas. Conheça a operação integrada do Grupo W3."
         path="/"
-        schema={organizationSchema}
       />
       <Hero />
       <SocialProof />
