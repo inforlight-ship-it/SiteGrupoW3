@@ -10,6 +10,7 @@ import '../styles/mobile-responsive.css';
 import '../styles/conversion-tools.css';
 import '../styles/security-check.css';
 import '../styles/technology-stack.css';
+import '../styles/legal-pages.css';
 import '../styles/mobile-menu-hotfix.css';
 
 const rootElement = document.getElementById('root');
