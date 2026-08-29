@@ -3,6 +3,7 @@ import { Hero } from "../components/Hero";
 import { SocialProof } from "../components/SocialProof";
 import { CaseStudies } from "../components/CaseStudies";
 import { Capabilities } from "../components/Capabilities";
+import { TechnologyStack } from "../components/TechnologyStack";
 import { BeforeAfter } from "../components/BeforeAfter";
 import { Services } from "../components/Services";
 import { SocNoc } from "../components/SocNoc";
@@ -24,6 +25,7 @@ export function HomePage() {
       <SocialProof />
       <CaseStudies />
       <Capabilities />
+      <TechnologyStack />
       <BeforeAfter />
       <Services />
       <SocNoc />
