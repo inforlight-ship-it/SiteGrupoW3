@@ -17,9 +17,7 @@ export function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
   const goTo = (selector: string) => {
@@ -32,7 +30,7 @@ export function Navbar() {
 
   const contact = () => {
     setIsOpen(false);
-    const message = encodeURIComponent("Olá! Gostaria de solicitar uma consultoria com o Grupo W3.");
+    const message = encodeURIComponent("Olá! Gostaria de conversar com a equipe Grupo W3 sobre cibersegurança e infraestrutura de TI.");
     window.open(`https://wa.me/5515988189999?text=${message}`, "_blank");
   };
 
@@ -46,23 +44,17 @@ export function Navbar() {
         <div className={`w3-nav-menu ${isOpen ? "active" : ""}`}>
           <div className="w3-nav-links">
             <Link to="/" onClick={() => goTo("#servicos")}>Soluções</Link>
+            <Link to="/" onClick={() => goTo("#operacao")}>Como operamos</Link>
             <Link to="/" onClick={() => goTo("#sobre")}>Grupo W3</Link>
             <Link to="/" onClick={() => goTo("#contato")}>Contato</Link>
           </div>
           <div className="w3-nav-actions">
-            <button className="w3-nav-ghost" onClick={() => goTo("#servicos")}>Ver serviços</button>
-            <button className="w3-nav-primary" onClick={contact}>Solicitar consultoria</button>
+            <button className="w3-nav-primary" onClick={contact}>Falar com especialista</button>
           </div>
         </div>
 
-        <button
-          className={`w3-menu-toggle ${isOpen ? "active" : ""}`}
-          onClick={() => setIsOpen((value) => !value)}
-          aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={isOpen}
-        >
-          <span />
-          <span />
+        <button className={`w3-menu-toggle ${isOpen ? "active" : ""}`} onClick={() => setIsOpen((value) => !value)} aria-label={isOpen ? "Fechar menu" : "Abrir menu"} aria-expanded={isOpen}>
+          <span /><span />
         </button>
       </div>
     </nav>
