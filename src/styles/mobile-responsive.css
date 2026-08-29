@@ -1,0 +1,260 @@
+/* Mobile-first hardening layer for Grupo W3 */
+html, body, #root { max-width: 100%; overflow-x: clip; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { min-width: 320px; }
+img, svg, video, canvas { max-width: 100%; }
+button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
+
+@media (max-width: 900px) {
+  .w3-container, .w3-capabilities-inner { width: min(100% - 32px, 1320px); }
+  .w3-section { padding-block: 82px; }
+  .w3-section-head { margin-bottom: 38px; }
+  .w3-section-title { font-size: clamp(2rem, 8vw, 3.35rem); }
+  .w3-section-lead { font-size: .96rem; }
+
+  .w3-nav { padding: max(8px, env(safe-area-inset-top)) 10px 0; }
+  .w3-nav-inner { min-height: 56px; padding: 7px 10px; }
+  .w3-nav-logo { max-width: 154px; }
+  .w3-menu-toggle { width: 32px; height: 26px; padding: 4px; }
+  .w3-nav-menu {
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: calc(92px + env(safe-area-inset-top)) 20px calc(28px + env(safe-area-inset-bottom));
+  }
+  .w3-nav-links a, .w3-nav-actions button { min-height: 48px; display: flex; align-items: center; }
+  .w3-nav-actions button { justify-content: center; }
+
+  .w3-hero-wrap { padding-left: 10px; padding-right: 10px; }
+  .w3-hero-card { width: 100%; }
+  .w3-icon-pipeline { width: min(100%, 560px); }
+  .w3-pipeline-line { flex: 1 1 54px; min-width: 24px; max-width: 92px; }
+
+  .w3-capabilities-list { min-width: 0; }
+  .w3-capability { min-width: 0; white-space: normal; line-height: 1.3; }
+
+  .w3-case-card, .w3-service-card, .w3-proof-card,
+  .w3-problem-links-grid a, .w3-operation-stage { min-width: 0; }
+
+  .w3-socnoc-shell { border-radius: 20px; }
+  .w3-socnoc-side, .w3-socnoc-core { min-width: 0; }
+
+  .w3-console-layer { grid-template-columns: 10px minmax(0, 1fr) auto; }
+  .w3-console-layer strong, .w3-console-layer small { overflow-wrap: anywhere; }
+
+  .w3-contact-points > a, .w3-contact-points > div { grid-template-columns: 26px minmax(0,1fr) 18px; }
+  .w3-contact-points strong { overflow-wrap: anywhere; word-break: break-word; }
+
+  .w3-detail-breadcrumb {
+    max-width: 100%; overflow-x: auto; white-space: nowrap; padding-bottom: 4px;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .w3-detail-breadcrumb::-webkit-scrollbar { display: none; }
+  .w3-detail-copy .w3-btn-primary, .w3-detail-cta .w3-btn-primary { min-height: 48px; }
+
+  .w3-case-page-meta span { line-height: 1.35; }
+  .w3-case-page-cta button { min-height: 48px; }
+
+  .w3-problem-heading button, .w3-problem-related a, .w3-not-found a { min-height: 48px; }
+}
+
+@media (max-width: 768px) {
+  .w3-section-head-split, .w3-before-after-head, .w3-problem-links-head { gap: 16px; }
+
+  .w3-hero-card { padding: 56px 18px 44px; }
+  .w3-hero-eyebrow { margin-bottom: 26px; font-size: .66rem; }
+  .w3-icon-pipeline { margin-bottom: 38px; }
+  .w3-hero-heading { font-size: clamp(2.15rem, 10vw, 3.45rem); }
+  .w3-hero-sub { margin: 22px auto 28px; }
+  .w3-trust-row { gap: 8px; }
+
+  .w3-proof-heading > p, .w3-cases-header .w3-section-lead { max-width: none; }
+  .w3-case-topline { gap: 12px; flex-wrap: wrap; }
+  .w3-case-footer { min-height: 52px; }
+
+  .w3-socnoc-side-head h3 { font-size: 1.85rem; }
+  .w3-socnoc-core { min-height: 320px; }
+  .w3-socnoc-core-ring.outer { width: 210px; height: 210px; }
+  .w3-socnoc-core-ring.inner { width: 142px; height: 142px; }
+
+  .w3-operation-stage { grid-template-columns: 38px minmax(0,1fr); padding: 17px; }
+  .w3-operation-icon { width: 38px; height: 38px; }
+  .w3-ops-console { border-radius: 18px; }
+  .w3-console-layers { padding-inline: 14px; }
+  .w3-console-layer { grid-template-columns: 8px minmax(0,1fr); gap: 9px; }
+  .w3-layer-state { grid-column: 2; justify-self: start; margin-top: 2px; }
+
+  /* Reflow the conceptual security map into a true mobile layout. */
+  .w3-security-map {
+    min-height: 0 !important;
+    padding: 24px 16px 70px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 10px;
+    align-items: stretch;
+  }
+  .w3-map-grid { z-index: 0; }
+  .w3-map-orbit { display: none; }
+  .w3-map-core {
+    position: relative; left: auto; top: auto; transform: none;
+    grid-column: 1 / -1; width: 112px; height: 112px; margin: 4px auto 14px; z-index: 1;
+  }
+  .w3-map-node,
+  .w3-map-node.node-1, .w3-map-node.node-2, .w3-map-node.node-3,
+  .w3-map-node.node-4, .w3-map-node.node-5 {
+    position: relative; inset: auto; left: auto; right: auto; top: auto; bottom: auto;
+    transform: none; min-width: 0; width: 100%; min-height: 48px; padding: 10px;
+    justify-content: center; z-index: 1;
+  }
+  .w3-map-node.node-5 { grid-column: 1 / -1; width: min(100%, 220px); justify-self: center; }
+  .w3-map-caption { bottom: 18px; padding-inline: 12px; line-height: 1.4; }
+
+  .w3-about-metrics { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+  .w3-about-metrics div { min-width: 0; }
+  .w3-about-metrics span { line-height: 1.35; }
+
+  .w3-contact-shell { padding: 30px 20px; }
+  .w3-contact-points > a, .w3-contact-points > div { min-height: 68px; padding: 10px 12px; }
+  .w3-contact-form input, .w3-contact-form textarea { font-size: 16px; }
+  .w3-contact-form input { min-height: 48px; }
+  .w3-form-submit { min-height: 50px; }
+
+  .w3-footer-column a { min-height: 38px; display: flex; align-items: center; }
+
+  .w3-detail-page { padding-bottom: 72px; }
+  .w3-detail-breadcrumb { margin-bottom: 18px; }
+  .w3-detail-hero { border-radius: 18px; }
+  .w3-detail-copy h1 { overflow-wrap: anywhere; }
+  .w3-detail-columns article, .w3-detail-tech, .w3-detail-cta { border-radius: 16px; }
+
+  .w3-case-page-heading h1, .w3-problem-heading h1 { overflow-wrap: anywhere; }
+  .w3-case-page-architecture { border-radius: 18px; }
+  .w3-case-page-story-grid article, .w3-case-page-scope-grid article { border-radius: 16px; }
+
+  .w3-ba-row > div:not(.w3-ba-arrow) { overflow-wrap: anywhere; }
+  .w3-problem-related a { gap: 12px; }
+}
+
+@media (max-width: 540px) {
+  .w3-container, .w3-capabilities-inner { width: min(100% - 24px, 1320px); }
+  .w3-section { padding-block: 66px; }
+  .w3-section-eyebrow { margin-bottom: 13px; font-size: .64rem; letter-spacing: .14em; }
+  .w3-section-title { font-size: clamp(1.9rem, 10vw, 2.65rem); line-height: 1.08; }
+  .w3-section-lead { font-size: .91rem; line-height: 1.68; }
+
+  .w3-nav { padding-inline: 6px; }
+  .w3-nav-logo { height: 34px !important; max-width: 142px; }
+  .w3-nav-menu { padding-inline: 18px; }
+  .w3-nav-links a { font-size: 1.18rem; }
+
+  .w3-hero-wrap { padding-top: calc(82px + env(safe-area-inset-top)); padding-inline: 6px; }
+  .w3-hero-card { border-radius: 14px; padding: 46px 15px 38px; }
+  .w3-hero-eyebrow { font-size: .59rem; letter-spacing: .1em; margin-bottom: 22px; }
+  .w3-icon-node { width: 38px; height: 38px; }
+  .w3-icon-node-center { width: 52px; height: 52px; }
+  .w3-icon-pipeline { margin-bottom: 31px; }
+  .w3-pipeline-line { min-width: 18px; max-width: 32px; }
+  .w3-hero-heading { font-size: clamp(2rem, 11.7vw, 2.9rem); line-height: 1.03; }
+  .w3-hero-sub { font-size: .88rem; line-height: 1.65; }
+  .w3-hero-actions { gap: 9px; }
+  .w3-hero-actions button { min-height: 49px; }
+  .w3-trust-row { display: grid; grid-template-columns: 1fr; width: 100%; }
+  .w3-trust-row span { text-align: left; border-radius: 12px; }
+
+  .w3-capabilities-list { grid-template-columns: 1fr; gap: 12px; }
+  .w3-capability { min-height: 34px; }
+
+  .w3-proof-card { padding: 23px 20px; }
+  .w3-case-content { padding-inline: 18px; }
+  .w3-case-topline, .w3-case-footer { padding-inline: 18px; }
+  .w3-case-visual { height: 170px; min-height: 170px; }
+
+  .w3-socnoc-side { padding: 20px 17px; }
+  .w3-socnoc-items article { grid-template-columns: 34px minmax(0,1fr); padding: 14px; }
+  .w3-socnoc-items article > div { width: 34px; height: 34px; }
+  .w3-socnoc-core { min-height: 290px; }
+
+  .w3-console-topbar { min-height: 52px; height: auto; padding-block: 10px; gap: 8px; }
+  .w3-console-status { font-size: .58rem; text-align: right; }
+  .w3-console-radar { height: 215px; }
+  .w3-radar-grid { width: 190px; height: 190px; }
+  .w3-radar-scan { width: 170px; height: 170px; }
+  .w3-radar-node.node-a { transform: translate(75px,-42px); }
+  .w3-radar-node.node-b { transform: translate(-82px,36px); }
+  .w3-radar-node.node-c { transform: translate(48px,68px); }
+
+  .w3-about-metrics { grid-template-columns: 1fr; }
+  .w3-about-metrics div { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.055); }
+  .w3-about-metrics div:last-child { border-bottom: 0; }
+
+  .w3-security-map { grid-template-columns: 1fr; padding-inline: 14px; }
+  .w3-map-node.node-5 { grid-column: auto; width: 100%; }
+
+  .w3-contact-shell { padding: 24px 14px; border-radius: 16px; }
+  .w3-contact-form { padding: 20px 14px; border-radius: 15px; }
+  .w3-contact-points > a, .w3-contact-points > div { grid-template-columns: 24px minmax(0,1fr); }
+  .w3-contact-points > a > svg:last-child { display: none; }
+  .w3-contact-points strong { font-size: .74rem; }
+  .w3-contact-note { padding-inline: 2px; }
+
+  .w3-footer { padding-top: 52px; padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
+  .w3-footer-bottom > div { flex-wrap: wrap; gap: 12px 18px; }
+
+  .w3-diagnostic-card { padding: 26px 17px; }
+  .w3-diagnostic-panel { padding: 16px; }
+  .w3-diagnostic-list > div { grid-template-columns: 30px minmax(0,1fr); }
+  .w3-diagnostic-list > div svg { display: none; }
+  .w3-diagnostic-copy h2 { font-size: clamp(1.9rem, 10vw, 2.4rem); }
+
+  .w3-detail-page { padding-top: calc(90px + env(safe-area-inset-top)); }
+  .w3-detail-hero { padding: 28px 17px; }
+  .w3-detail-copy h1 { font-size: clamp(2.15rem, 12vw, 3.25rem); }
+  .w3-detail-columns article, .w3-detail-tech { padding: 22px 17px; }
+  .w3-detail-cta { padding: 25px 17px; }
+  .w3-detail-cta .w3-btn-primary { width: 100%; }
+
+  .w3-case-page-hero { padding-top: calc(96px + env(safe-area-inset-top)); }
+  .w3-case-page-heading h1 { font-size: clamp(2.05rem, 11.5vw, 3rem); }
+  .w3-case-page-architecture { padding: 20px 14px; }
+  .w3-case-page-cta { padding: 26px 17px; }
+
+  .w3-before-after-table { border-radius: 16px; }
+  .w3-ba-row > div:not(.w3-ba-arrow) { padding: 16px 14px; font-size: .84rem; }
+  .w3-problem-links-grid a { min-height: 132px; padding: 18px; }
+  .w3-problem-links-grid a > div { margin: 20px 0 14px; }
+  .w3-problem-hero { padding-top: calc(100px + env(safe-area-inset-top)); padding-bottom: 62px; }
+  .w3-problem-heading { margin-top: 28px; }
+  .w3-problem-heading h1 { font-size: clamp(2.05rem, 11vw, 3rem); line-height: 1.02; }
+  .w3-problem-heading p { font-size: .94rem; }
+  .w3-problem-heading button { width: 100%; justify-content: center; }
+  .w3-problem-pillar-grid article { min-height: 0; padding: 23px 18px; }
+  .w3-problem-related { margin-block: 64px; }
+
+  .w3-not-found { padding-top: calc(104px + env(safe-area-inset-top)); }
+}
+
+@media (max-width: 380px) {
+  .w3-container, .w3-capabilities-inner { width: calc(100% - 20px); }
+  .w3-hero-card { padding-inline: 12px; }
+  .w3-hero-heading { font-size: 1.98rem; }
+  .w3-icon-node svg { width: 17px; }
+  .w3-icon-node-center svg { width: 22px; }
+  .w3-pipeline-line { max-width: 22px; }
+  .w3-case-content h3 { font-size: 1.18rem; }
+  .w3-socnoc-side-head h3 { font-size: 1.6rem; }
+  .w3-contact-form { padding-inline: 12px; }
+  .w3-detail-copy h1, .w3-case-page-heading h1, .w3-problem-heading h1 { font-size: 2rem; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .w3-service-card:hover, .w3-case-card:hover,
+  .w3-btn-primary:hover, .w3-btn-secondary:hover,
+  .w3-nav-primary:hover, .w3-form-submit:hover,
+  .w3-diagnostic-button:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
