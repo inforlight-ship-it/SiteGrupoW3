@@ -1,5 +1,6 @@
 import { ArrowUpRight, Building2, Network, Route, Server, ShieldCheck, UsersRound } from "lucide-react";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 const cases = [
   {
@@ -12,6 +13,7 @@ const cases = [
       "Atuação como parceiro tecnológico em soluções para servidores, controle de acesso e cibersegurança, integrando diferentes camadas críticas do ambiente.",
     tags: ["Servidores", "Controle de acesso", "Cibersegurança"],
     visual: [Server, UsersRound, ShieldCheck],
+    link: "/cases/fazenda-boa-vista",
   },
   {
     index: "02",
@@ -23,6 +25,7 @@ const cases = [
       "Implementação de solução Laserway em prédio corporativo com aproximadamente 500 pontos de rede, estruturando conectividade para a operação do ambiente.",
     tags: ["Laserway", "500 pontos de rede", "Infraestrutura"],
     visual: [Network, Route, Building2],
+    link: "/cases/adimax",
   },
   {
     index: "03",
@@ -34,6 +37,7 @@ const cases = [
       "Em uma operação logística sem equipe interna de TI, a W3 auxilia de ponta a ponta nos processos de tecnologia, atuando de forma próxima ao papel de uma diretoria de TI externa.",
     tags: ["Logística", "Gestão de TI", "CIO as a Service"],
     visual: [Route, Server, ShieldCheck],
+    link: "/cases/diso",
   },
 ];
 
@@ -91,8 +95,10 @@ export function CaseStudies() {
                 </div>
 
                 <div className="w3-case-footer">
-                  <span>Projeto em destaque</span>
-                  <ArrowUpRight size={17} />
+                  <Link to={item.link} className="w3-case-footer-link" aria-label={`Conhecer o case ${item.client}`}>
+                    <span>Conhecer case completo</span>
+                    <ArrowUpRight size={17} />
+                  </Link>
                 </div>
               </motion.article>
             );
