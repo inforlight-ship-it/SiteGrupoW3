@@ -53,6 +53,17 @@
 .w3-whatsapp-copy small { color: #60748e; font-size: .55rem; letter-spacing: .12em; font-weight: 800; }
 .w3-whatsapp-copy strong { margin-top: 4px; color: #eaf3ff; font-size: .76rem; font-weight: 650; white-space: nowrap; }
 
+.w3-route-loading {
+  min-height: 62vh;
+  padding: 150px 24px 80px;
+  display: grid;
+  place-items: center;
+  color: #607086;
+  background: #07090d;
+  font-size: .74rem;
+  letter-spacing: .08em;
+}
+
 @media (max-width: 640px) {
   .w3-whatsapp-float {
     right: 12px;
@@ -68,6 +79,7 @@
 
   .w3-whatsapp-copy, .w3-whatsapp-status { display: none; }
   .w3-whatsapp-float > svg { width: 21px; height: 21px; }
+  .w3-route-loading { min-height: 55vh; padding-top: calc(110px + env(safe-area-inset-top)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
