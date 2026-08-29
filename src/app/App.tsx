@@ -4,6 +4,11 @@ import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { HomePage } from "./pages/HomePage";
 import {
+  FazendaBoaVistaCasePage,
+  AdimaxCasePage,
+  DisoCasePage,
+} from "./pages/cases/CaseDetailPage";
+import {
   CIOServicePage,
   DPOServicePage,
   DatacenterPage,
@@ -26,6 +31,9 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/cases/fazenda-boa-vista" element={<FazendaBoaVistaCasePage />} />
+          <Route path="/cases/adimax" element={<AdimaxCasePage />} />
+          <Route path="/cases/diso" element={<DisoCasePage />} />
           <Route path="/servicos/cio-as-a-service" element={<CIOServicePage />} />
           <Route path="/servicos/dpo-as-a-service" element={<DPOServicePage />} />
           <Route path="/servicos/gerenciamento-datacenter" element={<DatacenterPage />} />
