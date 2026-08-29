@@ -34,7 +34,7 @@ export function Footer() {
             <Link to="/servicos/dpo-as-a-service">DPO as a Service</Link>
             <Link to="/servicos/gerenciamento-datacenter">Datacenter</Link>
             <Link to="/servicos/rmm">RMM</Link>
-            <Link to="/servicos/controle-acesso">Controle de acesso</Link>
+            <Link to="/conteudos">Conteúdos</Link>
           </div>
 
           <div className="w3-footer-column w3-footer-contact">
