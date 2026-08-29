@@ -5,6 +5,7 @@ import '../styles/index.css';
 import '../styles/detail.css';
 import '../styles/v2-business.css';
 import '../styles/case-pages.css';
+import '../styles/v3-seo.css';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Failed to find the root element');
