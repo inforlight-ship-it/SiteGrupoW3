@@ -47,7 +47,7 @@ export function Navbar() {
           <Logo className="w3-nav-logo" />
         </Link>
 
-        <div className={`w3-nav-menu ${isOpen ? "active" : ""}`} aria-hidden={!isOpen && typeof window !== "undefined" && window.innerWidth <= 768 ? true : undefined}>
+        <div id="w3-mobile-navigation" className={`w3-nav-menu ${isOpen ? "active" : ""}`}>
           <div className="w3-nav-links">
             <Link to="/#servicos" onClick={() => scrollHomeSection("#servicos")}>Soluções</Link>
             <Link to="/#cases" onClick={() => scrollHomeSection("#cases")}>Cases</Link>
