@@ -1,127 +1,62 @@
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { Button } from "./ui/button";
-import { Logo } from "./Logo";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Logo } from "./Logo";
 
 export function Navbar() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > 18);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navItems = [
-    { label: "Início", href: "#" },
-    { label: "Serviços", href: "#servicos" },
-    { label: "Sobre", href: "#sobre" },
-    { label: "Contato", href: "#contato" },
-  ];
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [isOpen]);
 
-  const handleNavClick = (href: string) => {
-    if (isHomePage) {
-      if (href === "#") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } else {
-        const element = document.querySelector(href);
-        element?.scrollIntoView({ behavior: "smooth" });
-      }
+  const goTo = (selector: string) => {
+    setIsOpen(false);
+    if (isHome) {
+      if (selector === "#") window.scrollTo({ top: 0, behavior: "smooth" });
+      else document.querySelector(selector)?.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMobileMenuOpen(false);
+  };
+
+  const contact = () => {
+    setIsOpen(false);
+    const message = encodeURIComponent("Olá! Gostaria de conversar com a equipe Grupo W3 sobre cibersegurança e infraestrutura de TI.");
+    window.open(`https://wa.me/5515988189999?text=${message}`, "_blank");
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50 shadow-lg shadow-blue-500/5"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center gap-3 group relative z-10"
-            aria-label="Grupo W3 - Página Inicial"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full group-hover:bg-blue-500/30 transition-all" />
-              <Logo className="h-12 w-auto relative z-10 transition-transform group-hover:scale-105" />
-            </div>
-          </Link>
+    <nav className={`w3-nav ${isScrolled ? "scrolled" : ""}`}>
+      <div className="w3-nav-inner">
+        <Link to="/" className="w3-nav-brand" onClick={() => goTo("#")} aria-label="Grupo W3 - início">
+          <Logo className="w3-nav-logo" />
+        </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                to={isHomePage ? "/" : "/"}
-                onClick={() => handleNavClick(item.href)}
-                className="text-blue-100 hover:text-white transition-colors relative group py-2"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300" />
-              </Link>
-            ))}
-            <Button
-              className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all hover:scale-105"
-              onClick={() => {
-                const message = encodeURIComponent("Olá! Gostaria de solicitar uma consultoria sobre cibersegurança.");
-                window.open(`https://wa.me/5515988189999?text=${message}`, '_blank');
-              }}
-            >
-              Solicitar Consultoria
-            </Button>
+        <div className={`w3-nav-menu ${isOpen ? "active" : ""}`}>
+          <div className="w3-nav-links">
+            <Link to="/" onClick={() => goTo("#servicos")}>Soluções</Link>
+            <Link to="/" onClick={() => goTo("#operacao")}>Como operamos</Link>
+            <Link to="/" onClick={() => goTo("#sobre")}>Grupo W3</Link>
+            <Link to="/" onClick={() => goTo("#contato")}>Contato</Link>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white p-2 hover:bg-slate-800/50 rounded-lg transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="w3-nav-actions">
+            <button className="w3-nav-primary" onClick={contact}>Falar com especialista</button>
+          </div>
         </div>
+
+        <button className={`w3-menu-toggle ${isOpen ? "active" : ""}`} onClick={() => setIsOpen((value) => !value)} aria-label={isOpen ? "Fechar menu" : "Abrir menu"} aria-expanded={isOpen}>
+          <span /><span />
+        </button>
       </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/50 shadow-2xl">
-          <div className="container mx-auto px-6 py-6 space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                to={isHomePage ? "/" : "/"}
-                onClick={() => handleNavClick(item.href)}
-                className="block text-blue-100 hover:text-white hover:bg-slate-800/50 transition-all py-3 px-4 rounded-lg"
-              >
-                {item.label}
-              </Link>
-            ))}
-            <Button
-              className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white"
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                const message = encodeURIComponent("Olá! Gostaria de solicitar uma consultoria sobre cibersegurança.");
-                window.open(`https://wa.me/5515988189999?text=${message}`, '_blank');
-              }}
-            >
-              Solicitar Consultoria
-            </Button>
-          </div>
-        </div>
-      )}
     </nav>
   );
 }
