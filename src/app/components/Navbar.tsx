@@ -28,9 +28,13 @@ export function Navbar() {
     }
   };
 
-  const contact = () => {
+  const diagnostic = () => {
     setIsOpen(false);
-    const message = encodeURIComponent("Olá! Gostaria de conversar com a equipe Grupo W3 sobre cibersegurança e infraestrutura de TI.");
+    if (isHome) {
+      document.querySelector("#diagnostico")?.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    const message = encodeURIComponent("Olá! Gostaria de solicitar uma avaliação inicial da segurança e infraestrutura da minha empresa com o Grupo W3.");
     window.open(`https://wa.me/5515988189999?text=${message}`, "_blank");
   };
 
@@ -44,12 +48,12 @@ export function Navbar() {
         <div className={`w3-nav-menu ${isOpen ? "active" : ""}`}>
           <div className="w3-nav-links">
             <Link to="/" onClick={() => goTo("#servicos")}>Soluções</Link>
-            <Link to="/" onClick={() => goTo("#operacao")}>Como operamos</Link>
+            <Link to="/" onClick={() => goTo("#cases")}>Cases</Link>
+            <Link to="/" onClick={() => goTo("#soc-noc")}>SOC + NOC</Link>
             <Link to="/" onClick={() => goTo("#sobre")}>Grupo W3</Link>
-            <Link to="/" onClick={() => goTo("#contato")}>Contato</Link>
           </div>
           <div className="w3-nav-actions">
-            <button className="w3-nav-primary" onClick={contact}>Falar com especialista</button>
+            <button className="w3-nav-primary" onClick={diagnostic}>Solicitar diagnóstico</button>
           </div>
         </div>
 
