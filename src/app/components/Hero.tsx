@@ -103,9 +103,8 @@ export function Hero() {
     };
   }, []);
 
-  const contact = () => {
-    const message = encodeURIComponent("Olá! Gostaria de conversar com a equipe Grupo W3 sobre segurança e infraestrutura de TI.");
-    window.open(`https://wa.me/5515988189999?text=${message}`, "_blank");
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -158,10 +157,8 @@ export function Hero() {
             Segurança, infraestrutura e operação de TI integradas em uma única equipe — com SOC, NOC, proteção de endpoints, backup, redes e consultoria especializada.
           </p>
           <div className="w3-hero-actions">
-            <button className="w3-btn-primary" onClick={contact}>Falar com um especialista</button>
-            <button className="w3-btn-secondary" onClick={() => document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" })}>
-              Conhecer soluções
-            </button>
+            <button className="w3-btn-primary" onClick={() => scrollTo("diagnostico")}>Solicitar avaliação inicial</button>
+            <button className="w3-btn-secondary" onClick={() => scrollTo("cases")}>Conhecer nossos cases</button>
           </div>
 
           <div className="w3-trust-row">
