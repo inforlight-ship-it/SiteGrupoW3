@@ -3,11 +3,22 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { HomePage } from "./pages/HomePage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 import {
   FazendaBoaVistaCasePage,
   AdimaxCasePage,
   DisoCasePage,
 } from "./pages/cases/CaseDetailPage";
+import {
+  SecurityForCompaniesPage,
+  Monitoring24x7Page,
+  RansomwareProtectionPage,
+  BackupRecoveryPage,
+  SocForCompaniesPage,
+  NocForCompaniesPage,
+  ITOutsourcingPage,
+  CybersecurityConsultingPage,
+} from "./pages/problems/ProblemPage";
 import {
   CIOServicePage,
   DPOServicePage,
@@ -34,6 +45,14 @@ export default function App() {
           <Route path="/cases/fazenda-boa-vista" element={<FazendaBoaVistaCasePage />} />
           <Route path="/cases/adimax" element={<AdimaxCasePage />} />
           <Route path="/cases/diso" element={<DisoCasePage />} />
+          <Route path="/seguranca-para-empresas" element={<SecurityForCompaniesPage />} />
+          <Route path="/monitoramento-ti-24x7" element={<Monitoring24x7Page />} />
+          <Route path="/protecao-contra-ransomware" element={<RansomwareProtectionPage />} />
+          <Route path="/backup-e-recuperacao" element={<BackupRecoveryPage />} />
+          <Route path="/soc-para-empresas" element={<SocForCompaniesPage />} />
+          <Route path="/noc-para-empresas" element={<NocForCompaniesPage />} />
+          <Route path="/terceirizacao-de-ti" element={<ITOutsourcingPage />} />
+          <Route path="/consultoria-ciberseguranca" element={<CybersecurityConsultingPage />} />
           <Route path="/servicos/cio-as-a-service" element={<CIOServicePage />} />
           <Route path="/servicos/dpo-as-a-service" element={<DPOServicePage />} />
           <Route path="/servicos/gerenciamento-datacenter" element={<DatacenterPage />} />
@@ -46,6 +65,7 @@ export default function App() {
           <Route path="/servicos/controle-acesso" element={<AccessControlPage />} />
           <Route path="/servicos/seguranca-cftv" element={<CCTVPage />} />
           <Route path="/servicos/protecao-email" element={<EmailProtectionPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
       </div>

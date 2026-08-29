@@ -5,6 +5,7 @@ on:
     branches:
       - redesign-enterprise-2026-08-29
       - v2-proof-cases-socnoc-cta-2026-08-29
+      - v3-seo-problem-pages-2026-08-29
   pull_request:
     branches:
       - main
@@ -38,3 +39,4 @@ jobs:
           name: site-production-dist
           path: dist
           if-no-files-found: error
+          include-hidden-files: true
