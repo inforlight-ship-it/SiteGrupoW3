@@ -25,3 +25,5 @@ Branch de desenvolvimento: `redesign-enterprise-2026-08-29`.
 
 ## Segurança de publicação
 A branch `main` não deve receber o redesign até revisão visual e validação de build.
+
+PR de revisão: #1 (draft).
