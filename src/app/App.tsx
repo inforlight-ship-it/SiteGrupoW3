@@ -9,6 +9,9 @@ import { HomePage } from "./pages/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 
 const SecurityPostureCheckPage = lazy(() => import("./pages/SecurityPostureCheckPage").then((module) => ({ default: module.SecurityPostureCheckPage })));
+const PrivacyPage = lazy(() => import("./pages/LegalPages").then((module) => ({ default: module.PrivacyPage })));
+const CookiesPage = lazy(() => import("./pages/LegalPages").then((module) => ({ default: module.CookiesPage })));
+const TermsPage = lazy(() => import("./pages/LegalPages").then((module) => ({ default: module.TermsPage })));
 
 const FazendaBoaVistaCasePage = lazy(() => import("./pages/cases/CaseDetailPage").then((module) => ({ default: module.FazendaBoaVistaCasePage })));
 const AdimaxCasePage = lazy(() => import("./pages/cases/CaseDetailPage").then((module) => ({ default: module.AdimaxCasePage })));
@@ -51,6 +54,9 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/diagnostico-seguranca" element={<SecurityPostureCheckPage />} />
+            <Route path="/privacidade" element={<PrivacyPage />} />
+            <Route path="/cookies" element={<CookiesPage />} />
+            <Route path="/termos-de-uso" element={<TermsPage />} />
             <Route path="/cases/fazenda-boa-vista" element={<FazendaBoaVistaCasePage />} />
             <Route path="/cases/adimax" element={<AdimaxCasePage />} />
             <Route path="/cases/diso" element={<DisoCasePage />} />
