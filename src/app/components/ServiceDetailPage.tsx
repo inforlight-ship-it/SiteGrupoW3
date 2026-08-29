@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowLeft, ArrowUpRight, Check, ChevronRight, Home, LucideIcon } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { SEO } from "./SEO";
 
 interface ServiceDetailPageProps {
   icon: LucideIcon;
@@ -16,10 +17,22 @@ interface ServiceDetailPageProps {
 }
 
 export function ServiceDetailPage({ icon: Icon, title, subtitle, description, imageUrl, benefits, features, technologies, whatsappMessage, color }: ServiceDetailPageProps) {
+  const location = useLocation();
   const handleContact = () => window.open(`https://wa.me/5515988189999?text=${encodeURIComponent(whatsappMessage)}`, "_blank");
+  const seoDescription = `${description} Conheça a abordagem do Grupo W3 para ${title.toLowerCase()} em ambientes empresariais.`;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: title,
+    description: seoDescription,
+    provider: { "@type": "Organization", name: "Grupo W3", url: "https://grupow3.com" },
+    areaServed: "BR",
+    url: `https://grupow3.com${location.pathname}`,
+  };
 
   return (
     <main className="w3-detail-page" data-source-image={imageUrl} data-legacy-color={color}>
+      <SEO title={`${title} | Grupo W3`} description={seoDescription} path={location.pathname} schema={schema} />
       <div className="w3-container">
         <nav className="w3-detail-breadcrumb" aria-label="Breadcrumb">
           <Link to="/"><Home size={14} /> Início</Link><ChevronRight size={13} /><Link to="/#servicos">Soluções</Link><ChevronRight size={13} /><span>{title}</span>
