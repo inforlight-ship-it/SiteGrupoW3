@@ -41,7 +41,7 @@ export function Footer() {
             <span>Contato</span>
             <a href="mailto:contato@grupow3.com">contato@grupow3.com</a>
             <a href="tel:+5515988189999">+55 (15) 98818-9999</a>
-            <p>Sorocaba, SP — Brasil</p>
+            <Link to="/ciberseguranca-sorocaba">Sorocaba, SP — Brasil</Link>
             <div className="w3-footer-availability"><i /> atendimento corporativo</div>
           </div>
         </div>
