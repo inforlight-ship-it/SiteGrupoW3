@@ -9,6 +9,7 @@ import '../styles/v3-seo.css';
 import '../styles/mobile-responsive.css';
 import '../styles/conversion-tools.css';
 import '../styles/security-check.css';
+import '../styles/technology-stack.css';
 import '../styles/mobile-menu-hotfix.css';
 
 const rootElement = document.getElementById('root');
