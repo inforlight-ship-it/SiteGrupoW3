@@ -6,6 +6,7 @@ import { Analytics } from "./components/Analytics";
 import { WhatsAppFloating } from "./components/WhatsAppFloating";
 import { HomePage } from "./pages/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { SecurityPostureCheckPage } from "./pages/SecurityPostureCheckPage";
 import {
   FazendaBoaVistaCasePage,
   AdimaxCasePage,
@@ -45,6 +46,7 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/diagnostico-seguranca" element={<SecurityPostureCheckPage />} />
           <Route path="/cases/fazenda-boa-vista" element={<FazendaBoaVistaCasePage />} />
           <Route path="/cases/adimax" element={<AdimaxCasePage />} />
           <Route path="/cases/diso" element={<DisoCasePage />} />
