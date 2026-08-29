@@ -1,0 +1,75 @@
+/* Conversion utilities intentionally isolated from the main visual system. */
+.w3-whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: max(22px, calc(env(safe-area-inset-bottom) + 16px));
+  z-index: 850;
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  max-width: min(280px, calc(100vw - 32px));
+  padding: 9px 15px 9px 13px;
+  border: 1px solid rgba(100,216,255,.15);
+  border-radius: 999px;
+  color: #dce9f7;
+  background: rgba(8,13,20,.94);
+  box-shadow: 0 16px 45px rgba(0,0,0,.32);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  text-decoration: none;
+  transform: translateY(16px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .24s ease, transform .24s ease, border-color .2s ease, visibility 0s linear .24s;
+}
+
+.w3-whatsapp-float.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.w3-whatsapp-float:hover {
+  border-color: rgba(100,216,255,.32);
+  transform: translateY(-2px);
+}
+
+.w3-whatsapp-float > svg { color: #7de1ff; flex: 0 0 auto; }
+
+.w3-whatsapp-status {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #54d6a2;
+  box-shadow: 0 0 12px rgba(84,214,162,.55);
+}
+
+.w3-whatsapp-copy { display: flex; flex-direction: column; min-width: 0; line-height: 1.1; }
+.w3-whatsapp-copy small { color: #60748e; font-size: .55rem; letter-spacing: .12em; font-weight: 800; }
+.w3-whatsapp-copy strong { margin-top: 4px; color: #eaf3ff; font-size: .76rem; font-weight: 650; white-space: nowrap; }
+
+@media (max-width: 640px) {
+  .w3-whatsapp-float {
+    right: 12px;
+    bottom: max(16px, calc(env(safe-area-inset-bottom) + 12px));
+    width: 52px;
+    height: 52px;
+    min-height: 52px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+    border-radius: 50%;
+  }
+
+  .w3-whatsapp-copy, .w3-whatsapp-status { display: none; }
+  .w3-whatsapp-float > svg { width: 21px; height: 21px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .w3-whatsapp-float { transition: none; }
+}
