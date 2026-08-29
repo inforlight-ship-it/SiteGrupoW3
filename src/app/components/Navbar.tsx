@@ -11,7 +11,7 @@ export function Navbar() {
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 18);
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -20,44 +20,46 @@ export function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
-  const goTo = (selector: string) => {
+  useEffect(() => {
     setIsOpen(false);
-    if (isHome) {
-      if (selector === "#") window.scrollTo({ top: 0, behavior: "smooth" });
-      else document.querySelector(selector)?.scrollIntoView({ behavior: "smooth" });
-    }
+  }, [location.pathname, location.hash]);
+
+  const scrollHomeSection = (selector: string) => {
+    setIsOpen(false);
+    if (!isHome) return;
+    if (selector === "#") window.scrollTo({ top: 0, behavior: "smooth" });
+    else document.querySelector(selector)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const diagnostic = () => {
     setIsOpen(false);
     if (isHome) {
-      document.querySelector("#diagnostico")?.scrollIntoView({ behavior: "smooth" });
+      document.querySelector("#diagnostico")?.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
     }
-    const message = encodeURIComponent("Olá! Gostaria de solicitar uma avaliação inicial da segurança e infraestrutura da minha empresa com o Grupo W3.");
-    window.open(`https://wa.me/5515988189999?text=${message}`, "_blank");
+    window.location.assign("/#diagnostico");
   };
 
   return (
-    <nav className={`w3-nav ${isScrolled ? "scrolled" : ""}`}>
+    <nav className={`w3-nav ${isScrolled ? "scrolled" : ""}`} aria-label="Navegação principal">
       <div className="w3-nav-inner">
-        <Link to="/" className="w3-nav-brand" onClick={() => goTo("#")} aria-label="Grupo W3 - início">
+        <Link to="/" className="w3-nav-brand" onClick={() => scrollHomeSection("#")} aria-label="Grupo W3 - início">
           <Logo className="w3-nav-logo" />
         </Link>
 
-        <div className={`w3-nav-menu ${isOpen ? "active" : ""}`}>
+        <div id="w3-mobile-navigation" className={`w3-nav-menu ${isOpen ? "active" : ""}`}>
           <div className="w3-nav-links">
-            <Link to="/" onClick={() => goTo("#servicos")}>Soluções</Link>
-            <Link to="/" onClick={() => goTo("#cases")}>Cases</Link>
-            <Link to="/" onClick={() => goTo("#soc-noc")}>SOC + NOC</Link>
-            <Link to="/" onClick={() => goTo("#sobre")}>Grupo W3</Link>
+            <Link to="/#servicos" onClick={() => scrollHomeSection("#servicos")}>Soluções</Link>
+            <Link to="/#cases" onClick={() => scrollHomeSection("#cases")}>Cases</Link>
+            <Link to="/#soc-noc" onClick={() => scrollHomeSection("#soc-noc")}>SOC + NOC</Link>
+            <Link to="/#sobre" onClick={() => scrollHomeSection("#sobre")}>Grupo W3</Link>
           </div>
           <div className="w3-nav-actions">
             <button className="w3-nav-primary" onClick={diagnostic}>Solicitar diagnóstico</button>
           </div>
         </div>
 
-        <button className={`w3-menu-toggle ${isOpen ? "active" : ""}`} onClick={() => setIsOpen((value) => !value)} aria-label={isOpen ? "Fechar menu" : "Abrir menu"} aria-expanded={isOpen}>
+        <button className={`w3-menu-toggle ${isOpen ? "active" : ""}`} onClick={() => setIsOpen((value) => !value)} aria-label={isOpen ? "Fechar menu" : "Abrir menu"} aria-expanded={isOpen} aria-controls="w3-mobile-navigation">
           <span /><span />
         </button>
       </div>

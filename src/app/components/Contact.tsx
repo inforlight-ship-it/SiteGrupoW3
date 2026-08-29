@@ -9,7 +9,7 @@ export function Contact() {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     const message = `*Contato pelo site Grupo W3*\n\n*Nome:* ${formData.name}\n*Empresa:* ${formData.company || "Não informado"}\n*Telefone:* ${formData.phone}\n*Email:* ${formData.email}\n\n*Contexto:*\n${formData.message}`;
-    window.open(`https://wa.me/5515988189999?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/5515988189999?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
     setOpened(true);
   };
 
@@ -38,12 +38,12 @@ export function Contact() {
             </div>
 
             <div className="w3-form-grid">
-              <label><span>Nome *</span><input required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Seu nome" /></label>
-              <label><span>Empresa</span><input value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} placeholder="Nome da empresa" /></label>
-              <label><span>Telefone *</span><input required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} placeholder="(15) 99999-9999" /></label>
-              <label><span>Email *</span><input required type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="voce@empresa.com.br" /></label>
+              <label><span>Nome *</span><input required autoComplete="name" enterKeyHint="next" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Seu nome" /></label>
+              <label><span>Empresa</span><input autoComplete="organization" enterKeyHint="next" value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} placeholder="Nome da empresa" /></label>
+              <label><span>Telefone *</span><input required type="tel" inputMode="tel" autoComplete="tel" enterKeyHint="next" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} placeholder="(15) 99999-9999" /></label>
+              <label><span>Email *</span><input required type="email" inputMode="email" autoComplete="email" enterKeyHint="next" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="voce@empresa.com.br" /></label>
             </div>
-            <label className="w3-form-message"><span>O que você precisa proteger ou melhorar? *</span><textarea required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="Ex.: precisamos estruturar monitoramento, revisar backup, reduzir riscos de endpoint..." /></label>
+            <label className="w3-form-message"><span>O que você precisa proteger ou melhorar? *</span><textarea required enterKeyHint="done" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="Ex.: precisamos estruturar monitoramento, revisar backup, reduzir riscos de endpoint..." /></label>
 
             <button type="submit" className="w3-form-submit">Continuar pelo WhatsApp <ArrowUpRight size={17} /></button>
             <p className="w3-form-disclaimer">Ao continuar, uma conversa será aberta no WhatsApp com as informações preenchidas. Nenhum dado é enviado automaticamente por este formulário.</p>
