@@ -14,18 +14,17 @@ Eventos instrumentados:
 - `case_open`
 - `contact_form_submit`
 
-## Google Analytics 4
+## Google Analytics 4 / Google Tag Manager
 
-Preferência: usar Google Tag Manager (GTM), pois o site já utiliza a AdOpt como CMP e o GTM facilita a configuração do Google Consent Mode.
+O ambiente de produção está configurado para usar **Google Tag Manager**, com o contêiner:
 
-Na Hostinger, configure somente uma opção:
+`GTM-NC9R4SW`
 
-- `VITE_GTM_ID=GTM-XXXXXXX` — recomendado; ou
-- `VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX` — ligação direta ao GA4.
+A configuração fica em `.env.production`:
 
-Não configure os dois ao mesmo tempo para evitar dupla medição.
+`VITE_GTM_ID=GTM-NC9R4SW`
 
-Depois de alterar a variável de ambiente, gere um novo build/deploy.
+`VITE_GA_MEASUREMENT_ID` permanece vazio para evitar medição duplicada. O GA4 deve ser criado e ligado dentro do próprio contêiner GTM.
 
 ### Consentimento
 
